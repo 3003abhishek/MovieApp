@@ -1,11 +1,42 @@
 import React from "react";
-
+import './App.css';
+import { useContext } from "react";
+import { appContext } from "./Context";
 function Movies(){
+  
+
+    const moviesdata=useContext(appContext);
+  console.log("data:",moviesdata);
+
     return(
-   
-        <h1>Movies</h1>
+        <div className="container">
+      
+        
+        
+           
+              <div className="container">
 
+                {
+           moviesdata.map((el)=>{
 
+               return (
+               <div  className="box">
+               <h2>{el.Title}</h2>
+              <img src={el.Poster}/>
+              
+
+               
+               </div>
+
+             
+               )
+           })
+        }
+         </div>
+            
+
+         </div>
+        
 
     );
 }
